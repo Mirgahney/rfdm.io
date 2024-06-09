@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head>
   <meta charset="utf-8">
-  <meta name="description" content="Diffusion in Space and Time">
+  <meta name="description" content="RecMoDiffuse: Recurrent Flow Diffusion for \\Human Motion Generation">
   <meta name="keywords" content="Generative models, Diffusion, Normalizing Flows, Human motion generation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RFDM</title>
@@ -86,24 +86,24 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Diffusion in Space and Time.</h1>
+          <h1 class="title is-1 publication-title">RecMoDiffuse: Recurrent Flow Diffusion for Human Motion Generation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="" target="_blank">Anonymous</a><sup></sup>,&nbsp;
+              <a href="https://mirgahney.github.io/" target="_blank">Mirgahney Mohmed</a><sup></sup>,&nbsp;
             </span>
-<!--            <span class="author-block">-->
-<!--                <a href="" target="_blank"></a><sup>1,2*</sup>,&nbsp;-->
-<!--            </span>-->
-<!--            <span class="author-block">&ndash;&gt;-->
-<!--                <a href="" target="_blank"></a><sup>1,2*</sup>,&nbsp;-->
-<!--            </span>-->
-<!--            <span class="author-block">&ndash;&gt;-->
-<!--                <a href="" target="_blank"></a><sup>1,2*</sup>,&nbsp;-->
-<!--            </span>-->
+            <span class="author-block">
+                <a href="https://hjakecunningham.github.io/" target="_blank">Jake Cunningham</a><sup></sup>,&nbsp;
+            </span>
+            <span class="author-block">
+                <a href="https://www.deisenroth.cc/" target="_blank">Marc P. Deisenroth</a><sup></sup>,&nbsp;
+            </span>
+            <span class="author-block">
+                <a href="https://profiles.ucl.ac.uk/40331-lourdes-de-agapito-vicente" target="_blank">Lourdes Agapito</a><sup></sup>&nbsp;
+            </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-<!--            <span class="author-block"><sup>1</sup></span>-->
+            <span class="author-block"><sup></sup>University College London</span>
 <!--            <br>-->
 <!--            <span class="author-block"><sup>2</sup>Uni</span>-->
           </div>
@@ -210,14 +210,16 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>Human motion generation has paramount importance in computer animation.
-            It is a challenging generative temporal modelling task due to the vast possibilities of human motion, the high human sensitivity to motion coherence and the difficulty of accurately generating fine-grained motions.
+          <p>
+            Human motion generation has paramount importance in computer animation.
+            It is a challenging generative temporal modelling task due to the vast possibilities of human motion, high human sensitivity to motion coherence and the difficulty of accurately generating fine-grained motions.
             Recently, diffusion methods have been proposed for human motion generation due to their high sample quality and expressiveness.
-            However, generated sequences still suffer from motion incoherence, and are limited to short lengths, and simple motion and take considerable time during inference.
-            To address these limitations, we propose the <i>Recurrent Flow Diffusion Model (RFDM)</i>, a new recurrent diffusion formulation for temporal modelling.
-            Unlike previous work, which applies diffusion to the whole sequence without any temporal dependency, an approach that inherently makes temporal consistency hard to achieve, RFDM explicitly enforces temporal constraints with the mean of normalizing flow models in the diffusion process and thereby extends diffusion to the temporal dimension.
-            We demonstrate the effectiveness of RFDM in the temporal modelling of human motion.
-            Our experiments show that RFDM achieves comparable results with state-of-the-art methods while generating coherent motion sequences and reducing the computational overhead in the inference stage.
+            However, generated sequences still suffer from motion incoherence, and are limited to short duration, and simpler motion and take considerable time during inference.
+            To address these limitations, we propose <i>RecMoDiffuse: Recurrent Flow Diffusion</i>, a new recurrent diffusion formulation for temporal modelling.
+            Unlike previous work, which applies diffusion to the whole sequence without any temporal dependency, an approach that inherently makes temporal consistency hard to achieve,
+            Our method explicitly enforces temporal constraints with the means of normalizing flow models in the diffusion process and thereby extends diffusion to the temporal dimension.
+            We demonstrate the effectiveness of RecMoDiffuse in the temporal modelling of human motion.
+            Our experiments show that RecMoDiffuse achieves comparable results with state-of-the-art methods while generating coherent motion sequences and reducing the computational overhead in the inference stage.
           </p>
         </div>
       </div>
@@ -259,23 +261,21 @@
         <div class="hero-body">
           <div class="container">
             <div id="results-carousel" class="carousel results-carousel">
-
-
-            <div id="slider29ded4db-9742-4b0a-adbb-10207b434a84" class="slider" tabindex="0">
-    <div class="slider-container" style="opacity: 1; width: 22795px; transition: none 0s ease 0s; transform: translate3d(-5405px, 0px, 0px);"><div class="slider-item" data-slider-index="-4" data-cloned="true" style="width: 235px;"><div class="item item-16">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <div id="slider29ded4db-9742-4b0a-adbb-10207b434a84" class="slider" tabindex="0">
+                <div class="slider-container" style="opacity: 1; width: 22795px; transition: none 0s ease 0s; transform: translate3d(-5405px, 0px, 0px);"><div class="slider-item" data-slider-index="-4" data-cloned="true" style="width: 235px;"><div class="item item-16">
+                <video poster="" id="43" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_16.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="-3" data-cloned="true" style="width: 235px;"><div class="item item-17">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="44" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_17.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="-2" data-cloned="true" style="width: 235px;"><div class="item item-18">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="45" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_18.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="-1" data-cloned="true" style="width: 235px;"><div class="item item-19">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="46" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_19.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item is-current" data-slider-index="0" style="width: 235px;"><div class="item item-00">
@@ -359,95 +359,95 @@
                   <source src="./static/images/RFDM/gallery/gen_19.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="20" data-cloned="true" style="width: 235px;"><div class="item item-00">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="20" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_00.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="21" data-cloned="true" style="width: 235px;"><div class="item item-01">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="21" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_01.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="22" data-cloned="true" style="width: 235px;"><div class="item item-02">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="22" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_02.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="23" data-cloned="true" style="width: 235px;"><div class="item item-03">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="23" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_03.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="24" data-cloned="true" style="width: 235px;"><div class="item item-04">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="24" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_04.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="25" data-cloned="true" style="width: 235px;"><div class="item item-05">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="25" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_05.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="26" data-cloned="true" style="width: 235px;"><div class="item item-06">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="26" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_06.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="27" data-cloned="true" style="width: 235px;"><div class="item item-07">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="27" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_07.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="28" data-cloned="true" style="width: 235px;"><div class="item item-08">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="28" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_08.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="29" data-cloned="true" style="width: 235px;"><div class="item item-09">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="29" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_09.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="30" data-cloned="true" style="width: 235px;"><div class="item item-10">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="30" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_10.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="31" data-cloned="true" style="width: 235px;"><div class="item item-11">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="31" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_11.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="32" data-cloned="true" style="width: 235px;"><div class="item item-12">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="32" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_12.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="33" data-cloned="true" style="width: 235px;"><div class="item item-13">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="33" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_13.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="34" data-cloned="true" style="width: 235px;"><div class="item item-14">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="34" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_14.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="35" data-cloned="true" style="width: 235px;"><div class="item item-15">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="35" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_15.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="36" data-cloned="true" style="width: 235px;"><div class="item item-16">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="36" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_16.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="37" data-cloned="true" style="width: 235px;"><div class="item item-17">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="37" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_17.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="38" data-cloned="true" style="width: 235px;"><div class="item item-18">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="38" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_18.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="39" data-cloned="true" style="width: 235px;"><div class="item item-19">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="39" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_19.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="40" data-cloned="true" style="width: 235px;"><div class="item item-00">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="40" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_00.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="41" data-cloned="true" style="width: 235px;"><div class="item item-01">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="41" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_01.mp4" type="video/mp4">
                 </video>
               </div></div><div class="slider-item" data-slider-index="42" data-cloned="true" style="width: 235px;"><div class="item item-02">
-                <video poster="" id="" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+                <video poster="" id="42" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
                   <source src="./static/images/RFDM/gallery/gen_02.mp4" type="video/mp4">
                 </video>
               </div></div></div>
@@ -618,7 +618,9 @@
 <section class="section" id="Acknowledgement">
   <div class="container is-max-desktop content">
     <h2 class="title">Acknowledgement</h2>
-    <p>This work is supported by NTU NAP, MOE AcRF Tier 2 (T2EP20221-0033), and under the RIE2020 Industry Alignment Fund - Industry Collaboration Projects (IAF-ICP) Funding Initiative, as well as cash and in-kind contribution from the industry partner(s).</p>
+    <p>The research presented here has been supported by the UCL Centre for Doctoral Training in Foundational AI under UKRI grant number EP/S021566/1.
+       The authors are also grateful to Baskerville Tier 2 HPC service (https://www.baskerville.ac.uk/); funded by the EPSRC and UKRI through the World Class Labs scheme (EP/T022221/1) and the Digital Research Infrastructure programme (EP/W032244/1) and is operated by Advanced Research Computing at the University of Birmingham.
+       We thank Shalini Maiti, Abdallah Basheir, Wonbong Jang, Oscar Key, and Waleed Dawood for their fruitful discussions and useful feedback.</p>
     <p>We referred to the project page of <a href="https://nerfies.github.io/">Nerfies</a> when creating this project page.</p>
   </div>
 </section>
