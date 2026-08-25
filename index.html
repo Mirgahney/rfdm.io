@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head>
+<html>
+<head>
   <meta charset="utf-8">
-  <meta name="description" content="RecMoDiffuse: Recurrent Flow Diffusion for \\Human Motion Generation">
-  <meta name="keywords" content="Generative models, Diffusion, Normalizing Flows, Human motion generation">
+  <meta name="description" content="RDM: Recurrent Diffusion Model for Human Motion Generation">
+  <meta name="keywords" content="Generative models, Diffusion, Normalizing Flows, Human motion generation, Recurrent diffusion">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RFDM</title>
+  <title>RDM: Recurrent Diffusion Model for Human Motion Generation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style><link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
@@ -28,16 +24,16 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index_rfdm.css">
-  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer="" src="./static/js/fontawesome.all.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
-<body data-new-gr-c-s-check-loaded="14.1173.0" data-gr-ext-installed="">
+<body>
 <div class="wrapper">
+
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -46,127 +42,68 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <!--
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="#">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="#">
-            Title 1
-          </a>
-          <a class="navbar-item" href="#">
-            Title 2
-          </a>
-          <a class="navbar-item" href="#">
-            Title 3
-          </a>
-          <a class="navbar-item" href="#">
-            Title 4
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  -->
-
 </nav>
 
+<!-- Hero / title -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">RecMoDiffuse: Recurrent Flow Diffusion for Human Motion Generation</h1>
+          <h1 class="title is-1 publication-title">RDM: Recurrent Diffusion Model for Human Motion Generation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://mirgahney.github.io/" target="_blank">Mirgahney Mohmed</a><sup></sup>,&nbsp;
+              <a href="https://mirgahney.github.io/" target="_blank">Mirgahney Mohamed</a><sup>1</sup>,&nbsp;
             </span>
             <span class="author-block">
-                <a href="https://hjakecunningham.github.io/" target="_blank">Jake Cunningham</a><sup></sup>,&nbsp;
+              <a href="https://hjakecunningham.github.io/" target="_blank">Harry Jake Cunningham</a><sup>1</sup>,&nbsp;
             </span>
             <span class="author-block">
-                <a href="https://www.deisenroth.cc/" target="_blank">Marc P. Deisenroth</a><sup></sup>,&nbsp;
+              Riccardo Barbano<sup>1</sup>,&nbsp;
             </span>
             <span class="author-block">
-                <a href="https://profiles.ucl.ac.uk/40331-lourdes-de-agapito-vicente" target="_blank">Lourdes Agapito</a><sup></sup>&nbsp;
+              <a href="https://www.deisenroth.cc/" target="_blank">Marc Peter Deisenroth</a><sup>1</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://profiles.ucl.ac.uk/40331-lourdes-de-agapito-vicente" target="_blank">Lourdes Agapito</a><sup>1</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup></sup>University College London</span>
-<!--            <br>-->
-<!--            <span class="author-block"><sup>2</sup>Uni</span>-->
+            <span class="author-block"><sup>1</sup>University College London</span>
           </div>
-
-<!--          <div class="is-size-6 publication-authors">-->
-<!--            <span class="author-block"><sup>*</sup>equal contribution &nbsp;&nbsp;</span>-->
-<!--            <span class="author-block"><sup>✉</sup>corresponding author</span>-->
-<!--          </div>-->
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
+              <!-- PDF -->
               <span class="link-block">
                 <a href="" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
-                  </span>
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper (Coming Soon)</span>
                 </a>
               </span>
+              <!-- arXiv -->
               <span class="link-block">
                 <a href="" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv (Coming Soon)</span>
                 </a>
               </span>
-              <!-- Video Link. -->
+              <!-- Video -->
               <span class="link-block">
-                <a href="" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <svg class="svg-inline--fa fa-youtube fa-w-18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg><!-- <i class="fab fa-youtube"></i> Font Awesome fontawesome.com -->
-                  </span>
+                <a href="#qualitative-videos" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-youtube"></i></span>
                   <span>Video (Coming Soon)</span>
                 </a>
               </span>
-              <!-- Code Link. -->
+              <!-- Code -->
               <span class="link-block">
                 <a href="" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
-                  </span>
-                  <span>GitHub (Coming Soon)</span>
-                  </a>
-              </span>
-              <!-- Colab Link. -->
-              <span class="link-block">
-                <a href="" class="external-link button is-normal is-rounded is-dark">
-                   <svg width="30" height="30">
-                    <image xlink:href="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" width="30" height="30"></image>
-                   </svg>
-                  <span>&nbsp;&nbsp;Colab (Coming Soon)</span>
-                  </a>
-              </span>
-              <!-- Hugging Face Link. -->
-              <span class="link-block">
-                <a href="" class="external-link button is-normal is-rounded is-dark">
-                  <span>🤗&nbsp;&nbsp;Hugging Face (Coming Soon)</span>
-                  </a>
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code (Coming Soon)</span>
+                </a>
               </span>
             </div>
-
           </div>
         </div>
       </div>
@@ -174,447 +111,336 @@
   </div>
 </section>
 
-<!-- <section class="hero teaser">
+<!-- Teaser figure -->
+<section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="#"
-                type="video/mp4">
-      </video>
+      <div class="figure-block">
+        <img src="./static/images/RDM/teaser_v3.2.png" alt="Volume, autoregressive, and recurrent diffusion compared on a long dribbling-with-a-basketball sequence">
+      </div>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">ModelName</span> Descriptions (for the above video)
+        <b>Temporal diffusion generation.</b>
+        Volume diffusion (a) is limited to a fixed horizon $L$. Autoregressive (b) and recurrent diffusion (c) both extend
+        sequences beyond it ($L+r$) &mdash; but recurrent diffusion stays better aligned with the prompt
+        &ldquo;dribbling with a basketball&rdquo; (see red circles).
       </h2>
     </div>
   </div>
-</section> -->
-
-<section class="hero is-light is-small">
-
 </section>
 
-<!-- Abtract and Paper Video -->
+<section class="hero is-light is-small"></section>
+
+<!-- Abstract -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Paper video. -->
-<!--    <div class="columns is-centered has-text-centered">-->
-<!--      <div class="column is-four-fifths">-->
-<!--        &lt;!&ndash; <h2 class="title is-3">Video</h2> &ndash;&gt;-->
-<!--        <div class="publication-video">-->
-<!--          <iframe src="https://www.youtube.com/embed/U5PTnw490SA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-    <!--/ Paper video. -->
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Human motion generation has paramount importance in computer animation.
-            It is a challenging generative temporal modelling task due to the vast possibilities of human motion, high human sensitivity to motion coherence and the difficulty of accurately generating fine-grained motions.
-            Recently, diffusion methods have been proposed for human motion generation due to their high sample quality and expressiveness.
-            However, generated sequences still suffer from motion incoherence, and are limited to short duration, and simpler motion and take considerable time during inference.
-            To address these limitations, we propose <i>RecMoDiffuse: Recurrent Flow Diffusion</i>, a new recurrent diffusion formulation for temporal modelling.
-            Unlike previous work, which applies diffusion to the whole sequence without any temporal dependency, an approach that inherently makes temporal consistency hard to achieve,
-            Our method explicitly enforces temporal constraints with the means of normalizing flow models in the diffusion process and thereby extends diffusion to the temporal dimension.
-            We demonstrate the effectiveness of RecMoDiffuse in the temporal modelling of human motion.
-            Our experiments show that RecMoDiffuse achieves comparable results with state-of-the-art methods while generating coherent motion sequences and reducing the computational overhead in the inference stage.
+            Human motion generation is a challenging task due to its high dimensionality and the difficulty of generating fine-grained motions.
+            Diffusion methods have been proposed due to their high sample quality and expressiveness.
+            Early approaches treat the entire sequence as a whole, which is computationally expensive and restricts sequence length.
+            In contrast, autoregressive diffusion models generate longer sequences.
+            However, their reliance on fully denoising previous frames complicates training and inference.
+            Consequently, we propose <i>RDM</i>, a new recurrent diffusion formulation similar to Recurrent Neural Networks (RNNs).
+            RDM explicitly conditions the diffusion process on preceding noisy frames, avoiding the cost of full denoising.
+            However, maintaining its probabilistic nature is non-trivial and, therefore, we employ Normalizing Flows to model recurrent connections.
+            Our evaluations demonstrate RDM's effectiveness: it achieves comparable performance to autoregressive baselines and generates long sequences that remain aligned with the text.
+            RDM also skips diffusion steps during inference, significantly reducing computational cost.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-
   </div>
 </section>
 
-<!-- Pipeline -->
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">Train & Inference</h2>
-                <img src="./static/images/RFDM/train_inference.png">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Experiments -->
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">Text-driven Motion Generation</h2>
-                <h4 class="title is-5">Quantitative Results</h4>
-                <img src="./static/images/RFDM/humanml3d.png">
-                <img src="./static/images/RFDM/kitml.png">
-            </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-              <h4 class="title is-5">Qualitative Results</h4>
-          </div>
-      </div>
-        <div class="hero-body">
-          <div class="container">
-            <div id="results-carousel" class="carousel results-carousel">
-                <div id="slider29ded4db-9742-4b0a-adbb-10207b434a84" class="slider" tabindex="0">
-                <div class="slider-container" style="opacity: 1; width: 22795px; transition: none 0s ease 0s; transform: translate3d(-5405px, 0px, 0px);"><div class="slider-item" data-slider-index="-4" data-cloned="true" style="width: 235px;"><div class="item item-16">
-                <video poster="" id="43" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_16.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="-3" data-cloned="true" style="width: 235px;"><div class="item item-17">
-                <video poster="" id="44" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_17.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="-2" data-cloned="true" style="width: 235px;"><div class="item item-18">
-                <video poster="" id="45" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_18.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="-1" data-cloned="true" style="width: 235px;"><div class="item item-19">
-                <video poster="" id="46" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_19.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item is-current" data-slider-index="0" style="width: 235px;"><div class="item item-00">
-                <video poster="" id="00" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_00.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item is-slide-previous is-slide-next" data-slider-index="1" style="width: 235px;"><div class="item item-01">
-                <video poster="" id="01" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_01.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="2" style="width: 235px;"><div class="item item-02">
-                <video poster="" id="02" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_02.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="3" style="width: 235px;"><div class="item item-03">
-                <video poster="" id="03" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_03.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="4" style="width: 235px;"><div class="item item-04">
-                <video poster="" id="04" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_04.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="5" style="width: 235px;"><div class="item item-05">
-                <video poster="" id="05" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_05.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="6" style="width: 235px;"><div class="item item-06">
-                <video poster="" id="06" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_06.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="7" style="width: 235px;"><div class="item item-07">
-                <video poster="" id="07" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_07.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="8" style="width: 235px;"><div class="item item-08">
-                <video poster="" id="08" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_08.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="9" style="width: 235px;"><div class="item item-09">
-                <video poster="" id="09" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_09.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="10" style="width: 235px;"><div class="item item-10">
-                <video poster="" id="10" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_10.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="11" style="width: 235px;"><div class="item item-11">
-                <video poster="" id="11" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_11.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="12" style="width: 235px;"><div class="item item-12">
-                <video poster="" id="12" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_12.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="13" style="width: 235px;"><div class="item item-13">
-                <video poster="" id="13" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_13.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="14" style="width: 235px;"><div class="item item-14">
-                <video poster="" id="14" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_14.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="15" style="width: 235px;"><div class="item item-15">
-                <video poster="" id="15" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_15.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="16" style="width: 235px;"><div class="item item-16">
-                <video poster="" id="16" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_16.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="17" style="width: 235px;"><div class="item item-17">
-                <video poster="" id="17" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_17.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="18" style="width: 235px;"><div class="item item-18">
-                <video poster="" id="18" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_18.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="19" style="width: 235px;"><div class="item item-19">
-                <video poster="" id="19" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_19.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="20" data-cloned="true" style="width: 235px;"><div class="item item-00">
-                <video poster="" id="20" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_00.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="21" data-cloned="true" style="width: 235px;"><div class="item item-01">
-                <video poster="" id="21" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_01.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="22" data-cloned="true" style="width: 235px;"><div class="item item-02">
-                <video poster="" id="22" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_02.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="23" data-cloned="true" style="width: 235px;"><div class="item item-03">
-                <video poster="" id="23" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_03.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="24" data-cloned="true" style="width: 235px;"><div class="item item-04">
-                <video poster="" id="24" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_04.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="25" data-cloned="true" style="width: 235px;"><div class="item item-05">
-                <video poster="" id="25" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_05.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="26" data-cloned="true" style="width: 235px;"><div class="item item-06">
-                <video poster="" id="26" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_06.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="27" data-cloned="true" style="width: 235px;"><div class="item item-07">
-                <video poster="" id="27" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_07.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="28" data-cloned="true" style="width: 235px;"><div class="item item-08">
-                <video poster="" id="28" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_08.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="29" data-cloned="true" style="width: 235px;"><div class="item item-09">
-                <video poster="" id="29" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_09.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="30" data-cloned="true" style="width: 235px;"><div class="item item-10">
-                <video poster="" id="30" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_10.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="31" data-cloned="true" style="width: 235px;"><div class="item item-11">
-                <video poster="" id="31" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_11.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="32" data-cloned="true" style="width: 235px;"><div class="item item-12">
-                <video poster="" id="32" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_12.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="33" data-cloned="true" style="width: 235px;"><div class="item item-13">
-                <video poster="" id="33" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_13.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="34" data-cloned="true" style="width: 235px;"><div class="item item-14">
-                <video poster="" id="34" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_14.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="35" data-cloned="true" style="width: 235px;"><div class="item item-15">
-                <video poster="" id="35" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_15.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="36" data-cloned="true" style="width: 235px;"><div class="item item-16">
-                <video poster="" id="36" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_16.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="37" data-cloned="true" style="width: 235px;"><div class="item item-17">
-                <video poster="" id="37" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_17.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="38" data-cloned="true" style="width: 235px;"><div class="item item-18">
-                <video poster="" id="38" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_18.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="39" data-cloned="true" style="width: 235px;"><div class="item item-19">
-                <video poster="" id="39" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_19.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="40" data-cloned="true" style="width: 235px;"><div class="item item-00">
-                <video poster="" id="40" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_00.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="41" data-cloned="true" style="width: 235px;"><div class="item item-01">
-                <video poster="" id="41" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_01.mp4" type="video/mp4">
-                </video>
-              </div></div><div class="slider-item" data-slider-index="42" data-cloned="true" style="width: 235px;"><div class="item item-02">
-                <video poster="" id="42" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-                  <source src="./static/images/RFDM/gallery/gen_02.mp4" type="video/mp4">
-                </video>
-              </div></div></div>
-  <div class="slider-navigation-previous"><svg viewBox="0 0 50 80" xml:space="preserve">
-      <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "></polyline>
-    </svg></div>
-<div class="slider-navigation-next"><svg viewBox="0 0 50 80" xml:space="preserve">
-      <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
-    </svg></div><div class="slider-pagination"><div class="slider-page" data-index="0"></div><div class="slider-page" data-index="1"></div><div class="slider-page" data-index="2"></div><div class="slider-page" data-index="3"></div><div class="slider-page" data-index="4"></div><div class="slider-page" data-index="5"></div><div class="slider-page" data-index="6"></div><div class="slider-page" data-index="7"></div><div class="slider-page" data-index="8"></div><div class="slider-page" data-index="9"></div><div class="slider-page" data-index="10"></div><div class="slider-page" data-index="11"></div><div class="slider-page" data-index="12"></div><div class="slider-page" data-index="13"></div><div class="slider-page" data-index="14"></div><div class="slider-page" data-index="15"></div><div class="slider-page" data-index="16"></div><div class="slider-page" data-index="17"></div><div class="slider-page" data-index="18"></div><div class="slider-page" data-index="19"></div></div></div></div>
-          </div>
-        </div>
-    </div>
-</section>
-
-<!-- Experiments -->
+<!-- Method -->
 <section class="section">
   <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-              <h2 class="title is-3">Inference Time Comparison</h2>
-              <h4 class="title is-5">Quantitative Results</h4>
-              <img src="./static/images/RFDM/compute.png">
-          </div>
-      </div>
-  </div>
-</section>
-
-
-<!-- More Paper -->
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <!-- Matting. -->
-    <!-- <div class="columns is-centered"> -->
-
-      <!-- Visual Effects. -->
-      <!-- <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Block 1</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
           <p>
-            example <i>example</i>
+            RDM extends diffusion to temporal sequences by formulating a 2D dependency grid across diffusion steps and
+            temporal (segment) steps &mdash; analogous to how an RNN unrolls over time. Both the forward (noising) and
+            reverse (denoising) processes are explicitly conditioned on the <i>previous noisy segment</i>, rather than on a
+            fully clean one. This removes the need to fully denoise past frames before generating new ones, which is what
+            makes prior autoregressive-diffusion methods slow and hard to train.
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="#"
-                    type="video/mp4">
-          </video>
+          <p>
+            Directly conditioning on noisy hidden states does not, in general, define a valid probability distribution.
+            To fix this, RDM models the recurrent transformation with an invertible <b>Normalizing Flow</b>, which keeps
+            the diffusion objective mathematically well-defined while still letting information flow recurrently between
+            segments. At inference, a <b>staircase sampling</b> schedule further skips redundant diffusion steps across
+            segments, cutting inference cost well below autoregressive baselines while keeping motion fidelity.
+          </p>
         </div>
-      </div> -->
-      <!--/ Visual Effects. -->
+        <div class="figure-block">
+          <img src="./static/images/RDM/recurent_diffusion_v5.2.png" alt="RDM method overview: 2D grid across diffusion steps and temporal steps, with Normalizing Flows modelling recurrent transformations">
+        </div>
+        <p class="figure-caption">
+          <b>Method overview.</b> RDM extends diffusion to temporal sequences by formulating a 2D dependency grid across
+          diffusion steps $t$ and temporal steps $i$. To maintain probabilistic tractability and a well-defined training
+          objective, invertible Normalizing Flows model the recurrent transformations. The framework comprises three
+          operational regimes &mdash; flow-only, diffusion-only, and joint diffusion-flow &mdash; that together let RDM
+          trade off segment length, segment count, and inference cost.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Matting. -->
-      <!-- <div class="column">
-        <h2 class="title is-3">Block 2</h2>
+<!-- Extended generation -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Extended-Sequence Generation</h2>
+        <div class="figure-block">
+          <img src="./static/images/RDM/rollout_mesh_mini_v2.2.png" alt="SMPL rollout comparing MD-4, MD-7, and RDM-7 on an extended dribbling-with-a-basketball sequence">
+        </div>
+        <p class="figure-caption">
+          <b>Qualitative results on extended generation on HumanML3D.</b> Using the prompt &ldquo;A person is dribbling
+          with a basketball&rdquo;, we generate motion up to 245 frames &mdash; well beyond the training horizon (right of
+          the dashed line). Within the training horizon, all methods produce plausible motion, though MD-4 shows foot-contact
+          issues (red circles) that MD-7 and RDM-7 avoid. Beyond the horizon, MD-4 fails completely; MD-7's motion loses
+          coherence, while <b>RDM-7 keeps generating coherent, well-aligned motion.</b>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Qualitative videos -->
+<section class="section" id="qualitative-videos">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Video Results</h2>
+        <p>Rendered comparisons of RDM against volume-diffusion and segment-based baselines, including long, extended
+          sequences and prompts involving dynamic object interaction (e.g. dribbling a basketball).</p>
+      </div>
+    </div>
+
+    <!--
+      TODO: once video files are supplied, replace the placeholder block below with a
+      .video-gallery grid of <video> tags, e.g.:
+
+      <div class="video-gallery">
+        <div>
+          <video autoplay muted loop playsinline controls>
+            <source src="./static/videos/RDM/<name>.mp4" type="video/mp4">
+          </video>
+          <p class="video-caption">Caption describing the prompt / comparison.</p>
+        </div>
+        ... (repeat per clip)
+      </div>
+
+      Drop source files into ./static/videos/RDM/ (folder already created).
+    -->
+    <div class="gallery-placeholder">
+      <span class="icon"><i class="fas fa-video"></i></span>
+      Full video gallery coming soon &mdash; including dynamic-object interaction results.
+    </div>
+  </div>
+</section>
+
+<!-- Quantitative results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Quantitative Results</h2>
+        <p class="has-text-left" style="margin-bottom:0.5rem;">
+          <span class="legend-swatch cell-best"></span>best&nbsp;&nbsp;
+          <span class="legend-swatch cell-mid"></span>second best&nbsp;&nbsp;
+          <span class="legend-swatch cell-worst"></span>third best
+        </p>
+
+        <h4 class="title is-5 has-text-left">HumanML3D</h4>
+        <div class="table-scroll">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th class="method-name">Method</th>
+                <th>R@1 &uarr;</th><th>R@2 &uarr;</th><th>R@3 &uarr;</th>
+                <th>FID &darr;</th><th>MM-Dist &darr;</th><th>MModality &uarr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="section-row"><td colspan="7">VAE</td></tr>
+              <tr><td class="method-name">TEMOS</td><td>0.424</td><td>0.612</td><td>0.722</td><td>3.734</td><td>3.703</td><td>0.368</td></tr>
+              <tr><td class="method-name">T2M</td><td>0.457</td><td>0.639</td><td>0.740</td><td>1.067</td><td>3.340</td><td>2.090</td></tr>
+              <tr><td class="method-name">MoMask</td><td>0.521</td><td>0.713</td><td>0.807</td><td>0.045</td><td>2.958</td><td>1.241</td></tr>
+
+              <tr class="section-row"><td colspan="7">Volume Diffusion</td></tr>
+              <tr><td class="method-name">MDM</td><td>0.320</td><td>0.498</td><td>0.611</td><td>0.544</td><td>5.566</td><td class="cell-best">2.799</td></tr>
+              <tr><td class="method-name">MotionDiffuse</td><td>0.491</td><td>0.681</td><td>0.782</td><td>0.630</td><td>3.113</td><td>1.553</td></tr>
+              <tr><td class="method-name">MLD</td><td>0.481</td><td>0.673</td><td>0.772</td><td>0.473</td><td>3.196</td><td class="cell-mid">2.413</td></tr>
+              <tr><td class="method-name">MotionMamba</td><td class="cell-worst">0.502</td><td>0.693</td><td>0.792</td><td>0.281</td><td>3.060</td><td class="cell-worst">2.294</td></tr>
+              <tr><td class="method-name">ReMoDiffuse</td><td class="cell-mid">0.510</td><td class="cell-worst">0.698</td><td class="cell-mid">0.795</td><td class="cell-worst">0.103</td><td class="cell-best">2.974</td><td>1.795</td></tr>
+              <tr><td class="method-name">Light-T2M</td><td class="cell-best">0.511</td><td class="cell-best">0.699</td><td class="cell-best">0.795</td><td class="cell-best">0.040</td><td class="cell-mid">3.002</td><td>1.670</td></tr>
+              <tr class="ours"><td class="method-name">RDM-1 (ours)</td><td>0.449</td><td>0.661</td><td>0.777</td><td>0.585</td><td>3.113</td><td>1.538</td></tr>
+
+              <tr class="section-row"><td colspan="7">Segment-based Diffusion</td></tr>
+              <tr><td class="method-name">AMD</td><td>&ndash;</td><td>&ndash;</td><td>0.617</td><td>0.586</td><td>5.469</td><td class="cell-best">2.512</td></tr>
+              <tr><td class="method-name">CLoSD (DiP)</td><td class="cell-best">0.463</td><td class="cell-best">0.668</td><td class="cell-best">0.773</td><td class="cell-best">0.247</td><td>3.178</td><td>&ndash;</td></tr>
+              <tr><td class="method-name">A-MDM</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>1.744</td><td>&ndash;</td><td>&ndash;</td></tr>
+              <tr><td class="method-name">MD-4</td><td>0.339</td><td>0.499</td><td>0.605</td><td>4.414</td><td>4.338</td><td>2.262</td></tr>
+              <tr><td class="method-name">MD-7</td><td>0.368</td><td>0.546</td><td>0.658</td><td>3.377</td><td class="cell-worst">4.019</td><td>1.771</td></tr>
+              <tr class="ours"><td class="method-name">RDM-4 (ours)</td><td class="cell-worst">0.442</td><td class="cell-mid">0.664</td><td class="cell-mid">0.762</td><td class="cell-worst">0.312</td><td class="cell-mid">3.604</td><td>1.544</td></tr>
+              <tr class="ours"><td class="method-name">RDM-7 (ours)</td><td class="cell-mid">0.455</td><td class="cell-worst">0.653</td><td class="cell-worst">0.772</td><td class="cell-mid">0.272</td><td class="cell-best">3.651</td><td>1.199</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="figure-caption">
+          Ground-truth motion length used for all methods. Evaluated 20&times; with 95% CI.
+          RDM-4/7 outperform segment-based baselines significantly and are comparable to CLoSD (DiP).
+        </p>
+
+        <h4 class="title is-5 has-text-left" style="margin-top:2rem;">KIT-ML</h4>
+        <div class="table-scroll">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th class="method-name">Method</th>
+                <th>R@1 &uarr;</th><th>R@2 &uarr;</th><th>R@3 &uarr;</th>
+                <th>FID &darr;</th><th>MM-Dist &darr;</th><th>MModality &uarr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="section-row"><td colspan="7">VAE</td></tr>
+              <tr><td class="method-name">TEMOS</td><td>0.353</td><td>0.561</td><td>0.687</td><td>3.717</td><td>3.417</td><td>0.532</td></tr>
+              <tr><td class="method-name">T2M</td><td>0.370</td><td>0.569</td><td>0.693</td><td>2.770</td><td>3.401</td><td>1.482</td></tr>
+              <tr><td class="method-name">MoMask</td><td>0.433</td><td>0.656</td><td>0.781</td><td>0.204</td><td>2.779</td><td>1.131</td></tr>
+
+              <tr class="section-row"><td colspan="7">Volume Diffusion</td></tr>
+              <tr><td class="method-name">MDM</td><td>0.164</td><td>0.291</td><td>0.396</td><td>0.497</td><td>9.191</td><td class="cell-best">1.907</td></tr>
+              <tr><td class="method-name">MotionDiffuse</td><td>0.417</td><td>0.621</td><td>0.739</td><td>1.954</td><td class="cell-worst">2.958</td><td>0.730</td></tr>
+              <tr><td class="method-name">MLD</td><td>0.390</td><td>0.609</td><td>0.734</td><td>0.404</td><td>3.204</td><td class="cell-mid">2.192</td></tr>
+              <tr><td class="method-name">MotionMamba</td><td>0.419</td><td class="cell-worst">0.645</td><td class="cell-worst">0.765</td><td>0.307</td><td>3.021</td><td class="cell-worst">1.678</td></tr>
+              <tr><td class="method-name">ReMoDiffuse</td><td class="cell-worst">0.427</td><td>0.641</td><td class="cell-worst">0.765</td><td class="cell-mid">0.155</td><td>2.814</td><td>1.239</td></tr>
+              <tr><td class="method-name">Light-T2M</td><td class="cell-best">0.444</td><td class="cell-best">0.670</td><td class="cell-best">0.794</td><td class="cell-best">0.161</td><td class="cell-best">2.746</td><td>1.005</td></tr>
+              <tr class="ours"><td class="method-name">RDM-1 (ours)</td><td>0.381</td><td>0.603</td><td>0.734</td><td>1.815</td><td>2.958</td><td>0.693</td></tr>
+
+              <tr class="section-row"><td colspan="7">Segment-based Diffusion</td></tr>
+              <tr><td class="method-name">MD-4</td><td class="cell-worst">0.307</td><td class="cell-worst">0.482</td><td class="cell-worst">0.609</td><td class="cell-worst">2.855</td><td class="cell-worst">4.128</td><td class="cell-best">2.960</td></tr>
+              <tr><td class="method-name">MD-7</td><td>0.273</td><td>0.453</td><td>0.579</td><td>5.556</td><td>4.579</td><td class="cell-mid">2.444</td></tr>
+              <tr class="ours"><td class="method-name">RDM-4 (ours)</td><td class="cell-mid">0.364</td><td class="cell-mid">0.576</td><td class="cell-mid">0.712</td><td class="cell-mid">1.950</td><td class="cell-mid">3.541</td><td class="cell-worst">1.068</td></tr>
+              <tr class="ours"><td class="method-name">RDM-7 (ours)</td><td class="cell-best">0.377</td><td class="cell-best">0.591</td><td class="cell-best">0.715</td><td class="cell-best">1.819</td><td class="cell-best">3.412</td><td>0.590</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="figure-caption">
+          RDM-4/7 significantly outperform segment-based baselines on KIT-ML. MD-<i>x</i> baselines degrade with more
+          segments since KIT-ML's shorter sequences (max 196 frames) harm future-segment prediction.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Computational efficiency -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Computational Efficiency</h2>
+        <div class="content has-text-justified">
+          <p>
+            Because RDM never needs to fully denoise previous segments, and its staircase schedule skips redundant
+            diffusion steps, it is substantially cheaper at inference than both volume-diffusion and autoregressive
+            segment-based baselines &mdash; while remaining competitive on quality.
+          </p>
+        </div>
         <div class="columns is-centered">
-          <div class="column content">
-            <p>
-                example <i>example</i>
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="#"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div> -->
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2> -->
-
-        <!-- Interpolating. -->
-        <!-- <h3 class="title is-4">Head 3</h3>
-        <div class="content has-text-justified">
-          <p>
-            description
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="#"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+          <div class="column">
+            <div class="figure-block">
+              <img src="./static/images/RDM/rdm_vs_closd_comparison.png" alt="Inference time vs sequence length for RDM (4/7/14 segments) and CLoSD">
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
           </div>
-          <div class="column is-3 has-text-centered">
-            <img src="#"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
+          <div class="column">
+            <div class="figure-block">
+              <img src="./static/images/RDM/rdm_vs_closd_speedup.png" alt="Speedup of RDM over CLoSD across sequence lengths">
+            </div>
           </div>
         </div>
-        <br/> -->
-        <!--/ Interpolating. -->
+        <p class="figure-caption">
+          <b>Computational efficiency comparison between RDM and CLoSD (DiP).</b> (left) Inference time vs. sequence
+          length for RDM with 4, 7, 14 segments (DDIM-50 steps) and CLoSD; error bars show &plusmn;3 standard deviations.
+          (right) Speedup dividing CLoSD's inference time by RDM's. RDM-4/7 outperform CLoSD by 3.51&ndash;18.11&times;
+          across sequence lengths, with larger speedups on shorter sequences; RDM-4 is faster than RDM-7, and RDM-14 is
+          the slowest of the three configurations.
+        </p>
 
-        <!-- Re-rendering. -->
-        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Example <span class="dnerf">example</span>
-          </p>
+        <h4 class="title is-5 has-text-left" style="margin-top:1.5rem;">Inference time &amp; FLOPs at 50 DDIM steps</h4>
+        <div class="table-scroll">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th class="method-name">Method</th>
+                <th>Inference time (s) &darr;</th>
+                <th>FLOPs (T) &darr;</th>
+                <th>Segment shape</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="method-name">MotionDiffuse</td><td class="cell-worst">2.71</td><td>64.64</td><td>x &isin; &#x211d;<sup>196&times;251</sup></td></tr>
+              <tr><td class="method-name">CLoSD (DiP)</td><td>8.73</td><td>229.44</td><td>x &isin; &#x211d;<sup>40&times;251</sup></td></tr>
+              <tr><td class="method-name">MD-7</td><td>5.40</td><td>83.41</td><td>x &isin; &#x211d;<sup>28&times;251</sup></td></tr>
+              <tr class="ours"><td class="method-name">RDM-4 (ours)</td><td class="cell-best">1.95</td><td class="cell-best">0.282</td><td>x &isin; &#x211d;<sup>49&times;251</sup></td></tr>
+              <tr class="ours"><td class="method-name">RDM-7 (ours)</td><td class="cell-mid">2.61</td><td class="cell-mid">0.533</td><td>x &isin; &#x211d;<sup>28&times;251</sup></td></tr>
+              <tr class="ours"><td class="method-name">RDM-14 (ours)</td><td>4.26</td><td class="cell-worst">3.00</td><td>x &isin; &#x211d;<sup>14&times;251</sup></td></tr>
+            </tbody>
+          </table>
         </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="#"
-                    type="video/mp4">
-          </video>
-        </div> -->
-        <!--/ Re-rendering. -->
-
-      <!-- </div>
-    </div> -->
-    <!--/ Animation. -->
-
-    <!-- Concurrent Work. -->
-    <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours
-          </p>
-          <p>
-            <a href="#">paper1 link</a> description
-          </p>
-          <p>
-            <a href="#">paper1 link</a> description
-          </p>
-          <p>
-            <a href="#">paper1 link</a> description
-          </p>
-          <p>
-            <a href="#">paper1 link</a> description
-          </p>
-        </div>
+        <p class="figure-caption">
+          RDM's FLOPs at DDIM-50 are roughly two orders of magnitude below CLoSD's, because RDM skips diffusion steps via
+          staircase sampling instead of fully denoising every previous segment.
+        </p>
       </div>
-    </div>-->
-    <!--/ Concurrent Work. -->
+    </div>
+  </div>
+</section>
 
+<!-- User study -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">User Study</h2>
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="figure-block">
+              <img src="./static/images/RDM/user_pref.png" alt="User preference study results">
+            </div>
+          </div>
+          <div class="column">
+            <div class="figure-block">
+              <img src="./static/images/RDM/userstudy_mquality.png" alt="User study: semantic alignment, motion quality, and smoothness">
+            </div>
+          </div>
+        </div>
+        <p class="figure-caption">
+          <b>User study analysis.</b> Semantic (%) denotes how well the generated motion visually corresponds to the
+          input sentence; motion quality (%) reflects overall naturalness; smoothness (%) reflects motion coherence.
+          Higher is better across all three.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{mohamed2024recmodiffuse,
-        title={RecMoDiffuse: Recurrent Flow Diffusion for Human Motion Generation},
-        author={Mohamed, Mirgahney and Cunningham, Harry Jake and Deisenroth, Marc P and Agapito, Lourdes},
-        journal={arXiv preprint arXiv:2406.07169},
-        year={2024}}</code></pre>
+    <p>Citation details (arXiv / BMVC proceedings) will be added once the paper is publicly available. In the meantime:</p>
+    <pre><code>@article{mohamed2026rdm,
+        title={RDM: Recurrent Diffusion Model for Human Motion Generation},
+        author={Mohamed, Mirgahney and Cunningham, Harry Jake and Barbano, Riccardo and Deisenroth, Marc Peter and Agapito, Lourdes},
+        year={2026}}</code></pre>
   </div>
 </section>
 
@@ -629,6 +455,5 @@
 </section>
 
 </div>
-
-</body><div id="vimeo-record-extension"></div><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+</body>
 </html>
