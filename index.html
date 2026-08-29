@@ -116,13 +116,13 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <div class="figure-block">
-        <img src="./static/images/RDM/teaser_v3.2.png" alt="Volume, autoregressive, and recurrent diffusion compared on a long dribbling-with-a-basketball sequence">
+        <img src="./static/images/RDM/teaser_v3.3.png" alt="Volume, autoregressive, and recurrent diffusion compared on a long dribbling-with-a-basketball sequence">
       </div>
       <h2 class="subtitle has-text-centered">
         <b>Temporal diffusion generation.</b>
         Volume diffusion (a) is limited to a fixed horizon $L$. Autoregressive (b) and recurrent diffusion (c) both extend
         sequences beyond it ($L+r$) &mdash; but recurrent diffusion stays better aligned with the prompt
-        &ldquo;dribbling with a basketball&rdquo; (see red circles).
+        &ldquo;dribbling with a basketball&rdquo; (see green circles).
       </h2>
     </div>
   </div>
@@ -143,11 +143,11 @@
             Early approaches treat the entire sequence as a whole, which is computationally expensive and restricts sequence length.
             In contrast, autoregressive diffusion models generate longer sequences.
             However, their reliance on fully denoising previous frames complicates training and inference.
-            Consequently, we propose <i>RDM</i>, a new recurrent diffusion formulation similar to Recurrent Neural Networks (RNNs).
+            Consequently, we propose <i>RDM</i>, a new recurrent diffusion formulation inspired by Recurrent Neural Networks (RNNs).
             RDM explicitly conditions the diffusion process on preceding noisy frames, avoiding the cost of full denoising.
-            However, maintaining its probabilistic nature is non-trivial and, therefore, we employ Normalizing Flows to model recurrent connections.
+            To overcome the challenge of maintaining its probabilistic nature, we employ Normalizing Flows to model recurrent connections.
             Our evaluations demonstrate RDM's effectiveness: it achieves comparable performance to autoregressive baselines and generates long sequences that remain aligned with the text.
-            RDM also skips diffusion steps during inference, significantly reducing computational cost.
+            RDM also skips diffusion steps during inference, reducing computational cost by up to 18&times; over autoregressive baselines.
           </p>
         </div>
       </div>
@@ -178,7 +178,7 @@
           </p>
         </div>
         <div class="figure-block">
-          <img src="./static/images/RDM/recurent_diffusion_v5.2.png" alt="RDM method overview: 2D grid across diffusion steps and temporal steps, with Normalizing Flows modelling recurrent transformations">
+          <img src="./static/images/RDM/recurent_diffusion_v5.3.png" alt="RDM method overview: 2D grid across diffusion steps and temporal steps, with Normalizing Flows modelling recurrent transformations">
         </div>
         <p class="figure-caption">
           <b>Method overview.</b> RDM extends diffusion to temporal sequences by formulating a 2D dependency grid across
@@ -199,14 +199,15 @@
       <div class="column is-five-fifths">
         <h2 class="title is-3">Extended-Sequence Generation</h2>
         <div class="figure-block">
-          <img src="./static/images/RDM/rollout_mesh_mini_v2.2.png" alt="SMPL rollout comparing MD-4, MD-7, and RDM-7 on an extended dribbling-with-a-basketball sequence">
+          <img src="./static/images/RDM/rollout_mesh_mini_v2.3.png" alt="SMPL rollout comparing MD-49, MD-28, and RDM-28 on an extended dribbling-with-a-basketball sequence">
         </div>
         <p class="figure-caption">
           <b>Qualitative results on extended generation on HumanML3D.</b> Using the prompt &ldquo;A person is dribbling
           with a basketball&rdquo;, we generate motion up to 245 frames &mdash; well beyond the training horizon (right of
-          the dashed line). Within the training horizon, all methods produce plausible motion, though MD-4 shows foot-contact
-          issues (red circles) that MD-7 and RDM-7 avoid. Beyond the horizon, MD-4 fails completely; MD-7's motion loses
-          coherence, while <b>RDM-7 keeps generating coherent, well-aligned motion.</b>
+          the dashed line); green/red circles mark correct/broken dribbling frames. Within the training horizon, MD-49
+          dribbles correctly at first but loses the motion near the boundary, raising its arms overhead, and fails beyond
+          the horizon. MD-28 dribbles correctly for longer, but its hands stop dribbling once past the horizon. In contrast,
+          <b>RDM-28 keeps dribbling correctly throughout.</b>
         </p>
       </div>
     </div>
@@ -282,22 +283,22 @@
               <tr><td class="method-name">MotionMamba</td><td class="cell-worst">0.502</td><td>0.693</td><td>0.792</td><td>0.281</td><td>3.060</td><td class="cell-worst">2.294</td></tr>
               <tr><td class="method-name">ReMoDiffuse</td><td class="cell-mid">0.510</td><td class="cell-worst">0.698</td><td class="cell-mid">0.795</td><td class="cell-worst">0.103</td><td class="cell-best">2.974</td><td>1.795</td></tr>
               <tr><td class="method-name">Light-T2M</td><td class="cell-best">0.511</td><td class="cell-best">0.699</td><td class="cell-best">0.795</td><td class="cell-best">0.040</td><td class="cell-mid">3.002</td><td>1.670</td></tr>
-              <tr class="ours"><td class="method-name">RDM-1 (ours)</td><td>0.449</td><td>0.661</td><td>0.777</td><td>0.585</td><td>3.113</td><td>1.538</td></tr>
+              <tr class="ours"><td class="method-name">RDM-196 (ours)</td><td>0.449</td><td>0.661</td><td>0.777</td><td>0.585</td><td>3.113</td><td>1.538</td></tr>
 
               <tr class="section-row"><td colspan="7">Segment-based Diffusion</td></tr>
               <tr><td class="method-name">AMD</td><td>&ndash;</td><td>&ndash;</td><td>0.617</td><td>0.586</td><td>5.469</td><td class="cell-best">2.512</td></tr>
               <tr><td class="method-name">CLoSD (DiP)</td><td class="cell-best">0.463</td><td class="cell-best">0.668</td><td class="cell-best">0.773</td><td class="cell-best">0.247</td><td>3.178</td><td>&ndash;</td></tr>
               <tr><td class="method-name">A-MDM</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>1.744</td><td>&ndash;</td><td>&ndash;</td></tr>
-              <tr><td class="method-name">MD-4</td><td>0.339</td><td>0.499</td><td>0.605</td><td>4.414</td><td>4.338</td><td>2.262</td></tr>
-              <tr><td class="method-name">MD-7</td><td>0.368</td><td>0.546</td><td>0.658</td><td>3.377</td><td class="cell-worst">4.019</td><td>1.771</td></tr>
-              <tr class="ours"><td class="method-name">RDM-4 (ours)</td><td class="cell-worst">0.442</td><td class="cell-mid">0.664</td><td class="cell-mid">0.762</td><td class="cell-worst">0.312</td><td class="cell-mid">3.604</td><td>1.544</td></tr>
-              <tr class="ours"><td class="method-name">RDM-7 (ours)</td><td class="cell-mid">0.455</td><td class="cell-worst">0.653</td><td class="cell-worst">0.772</td><td class="cell-mid">0.272</td><td class="cell-best">3.651</td><td>1.199</td></tr>
+              <tr><td class="method-name">MD-49</td><td>0.339</td><td>0.499</td><td>0.605</td><td>4.414</td><td>4.338</td><td>2.262</td></tr>
+              <tr><td class="method-name">MD-28</td><td>0.368</td><td>0.546</td><td>0.658</td><td>3.377</td><td class="cell-worst">4.019</td><td>1.771</td></tr>
+              <tr class="ours"><td class="method-name">RDM-49 (ours)</td><td class="cell-worst">0.442</td><td class="cell-mid">0.664</td><td class="cell-mid">0.762</td><td class="cell-worst">0.312</td><td class="cell-mid">3.604</td><td>1.544</td></tr>
+              <tr class="ours"><td class="method-name">RDM-28 (ours)</td><td class="cell-mid">0.455</td><td class="cell-worst">0.653</td><td class="cell-worst">0.772</td><td class="cell-mid">0.272</td><td class="cell-best">3.651</td><td>1.199</td></tr>
             </tbody>
           </table>
         </div>
         <p class="figure-caption">
           Ground-truth motion length used for all methods. Evaluated 20&times; with 95% CI.
-          RDM-4/7 outperform segment-based baselines significantly and are comparable to CLoSD (DiP).
+          RDM-49/28 outperform segment-based baselines significantly and are comparable to CLoSD (DiP).
         </p>
 
         <h4 class="title is-5 has-text-left" style="margin-top:2rem;">KIT-ML</h4>
@@ -323,18 +324,18 @@
               <tr><td class="method-name">MotionMamba</td><td>0.419</td><td class="cell-worst">0.645</td><td class="cell-worst">0.765</td><td>0.307</td><td>3.021</td><td class="cell-worst">1.678</td></tr>
               <tr><td class="method-name">ReMoDiffuse</td><td class="cell-worst">0.427</td><td>0.641</td><td class="cell-worst">0.765</td><td class="cell-mid">0.155</td><td>2.814</td><td>1.239</td></tr>
               <tr><td class="method-name">Light-T2M</td><td class="cell-best">0.444</td><td class="cell-best">0.670</td><td class="cell-best">0.794</td><td class="cell-best">0.161</td><td class="cell-best">2.746</td><td>1.005</td></tr>
-              <tr class="ours"><td class="method-name">RDM-1 (ours)</td><td>0.381</td><td>0.603</td><td>0.734</td><td>1.815</td><td>2.958</td><td>0.693</td></tr>
+              <tr class="ours"><td class="method-name">RDM-196 (ours)</td><td>0.381</td><td>0.603</td><td>0.734</td><td>1.815</td><td>2.958</td><td>0.693</td></tr>
 
               <tr class="section-row"><td colspan="7">Segment-based Diffusion</td></tr>
-              <tr><td class="method-name">MD-4</td><td class="cell-worst">0.307</td><td class="cell-worst">0.482</td><td class="cell-worst">0.609</td><td class="cell-worst">2.855</td><td class="cell-worst">4.128</td><td class="cell-best">2.960</td></tr>
-              <tr><td class="method-name">MD-7</td><td>0.273</td><td>0.453</td><td>0.579</td><td>5.556</td><td>4.579</td><td class="cell-mid">2.444</td></tr>
-              <tr class="ours"><td class="method-name">RDM-4 (ours)</td><td class="cell-mid">0.364</td><td class="cell-mid">0.576</td><td class="cell-mid">0.712</td><td class="cell-mid">1.950</td><td class="cell-mid">3.541</td><td class="cell-worst">1.068</td></tr>
-              <tr class="ours"><td class="method-name">RDM-7 (ours)</td><td class="cell-best">0.377</td><td class="cell-best">0.591</td><td class="cell-best">0.715</td><td class="cell-best">1.819</td><td class="cell-best">3.412</td><td>0.590</td></tr>
+              <tr><td class="method-name">MD-49</td><td class="cell-worst">0.307</td><td class="cell-worst">0.482</td><td class="cell-worst">0.609</td><td class="cell-worst">2.855</td><td class="cell-worst">4.128</td><td class="cell-best">2.960</td></tr>
+              <tr><td class="method-name">MD-28</td><td>0.273</td><td>0.453</td><td>0.579</td><td>5.556</td><td>4.579</td><td class="cell-mid">2.444</td></tr>
+              <tr class="ours"><td class="method-name">RDM-49 (ours)</td><td class="cell-mid">0.364</td><td class="cell-mid">0.576</td><td class="cell-mid">0.712</td><td class="cell-mid">1.950</td><td class="cell-mid">3.541</td><td class="cell-worst">1.068</td></tr>
+              <tr class="ours"><td class="method-name">RDM-28 (ours)</td><td class="cell-best">0.377</td><td class="cell-best">0.591</td><td class="cell-best">0.715</td><td class="cell-best">1.819</td><td class="cell-best">3.412</td><td>0.590</td></tr>
             </tbody>
           </table>
         </div>
         <p class="figure-caption">
-          RDM-4/7 significantly outperform segment-based baselines on KIT-ML. MD-<i>x</i> baselines degrade with more
+          RDM-49/28 significantly outperform segment-based baselines on KIT-ML. MD-<i>x</i> baselines degrade with more
           segments since KIT-ML's shorter sequences (max 196 frames) harm future-segment prediction.
         </p>
       </div>
@@ -370,8 +371,8 @@
         <p class="figure-caption">
           <b>Computational efficiency comparison between RDM and CLoSD (DiP).</b> (left) Inference time vs. sequence
           length for RDM with 4, 7, 14 segments (DDIM-50 steps) and CLoSD; error bars show &plusmn;3 standard deviations.
-          (right) Speedup dividing CLoSD's inference time by RDM's. RDM-4/7 outperform CLoSD by 3.51&ndash;18.11&times;
-          across sequence lengths, with larger speedups on shorter sequences; RDM-4 is faster than RDM-7, and RDM-14 is
+          (right) Speedup dividing CLoSD's inference time by RDM's. RDM-49/28 outperform CLoSD by 3.51&ndash;18.11&times;
+          across sequence lengths, with larger speedups on shorter sequences; RDM-49 is faster than RDM-28, and RDM-14 is
           the slowest of the three configurations.
         </p>
 
@@ -389,10 +390,9 @@
             <tbody>
               <tr><td class="method-name">MotionDiffuse</td><td class="cell-worst">2.71</td><td>64.64</td><td>x &isin; &#x211d;<sup>196&times;251</sup></td></tr>
               <tr><td class="method-name">CLoSD (DiP)</td><td>8.73</td><td>229.44</td><td>x &isin; &#x211d;<sup>40&times;251</sup></td></tr>
-              <tr><td class="method-name">MD-7</td><td>5.40</td><td>83.41</td><td>x &isin; &#x211d;<sup>28&times;251</sup></td></tr>
-              <tr class="ours"><td class="method-name">RDM-4 (ours)</td><td class="cell-best">1.95</td><td class="cell-best">0.282</td><td>x &isin; &#x211d;<sup>49&times;251</sup></td></tr>
-              <tr class="ours"><td class="method-name">RDM-7 (ours)</td><td class="cell-mid">2.61</td><td class="cell-mid">0.533</td><td>x &isin; &#x211d;<sup>28&times;251</sup></td></tr>
-              <tr class="ours"><td class="method-name">RDM-14 (ours)</td><td>4.26</td><td class="cell-worst">3.00</td><td>x &isin; &#x211d;<sup>14&times;251</sup></td></tr>
+              <tr><td class="method-name">MD-28</td><td>5.40</td><td>83.41</td><td>x &isin; &#x211d;<sup>28&times;251</sup></td></tr>
+              <tr class="ours"><td class="method-name">RDM-49 (ours)</td><td class="cell-best">1.95</td><td class="cell-best">0.282</td><td>x &isin; &#x211d;<sup>49&times;251</sup></td></tr>
+              <tr class="ours"><td class="method-name">RDM-28 (ours)</td><td class="cell-mid">2.61</td><td class="cell-mid">0.533</td><td>x &isin; &#x211d;<sup>28&times;251</sup></td></tr>
             </tbody>
           </table>
         </div>
@@ -447,9 +447,11 @@
 <section class="section" id="Acknowledgement">
   <div class="container is-max-desktop content">
     <h2 class="title">Acknowledgement</h2>
-    <p>The research presented here has been supported by the UCL Centre for Doctoral Training in Foundational AI under UKRI grant number EP/S021566/1.
+    <p>The research presented here has been supported by the UCL Centre for Doctoral Training in Foundational AI under UKRI grant number EP/S021566/1 and the UKRI/EPSRC AI Hub in Generative Models under grant number EP/Y028805/1.
+       RB acknowledges support from the EPSRC (EP/V026259/1).
        The authors are also grateful to Baskerville Tier 2 HPC service (https://www.baskerville.ac.uk/); funded by the EPSRC and UKRI through the World Class Labs scheme (EP/T022221/1) and the Digital Research Infrastructure programme (EP/W032244/1) and is operated by Advanced Research Computing at the University of Birmingham.
-       We thank Shalini Maiti, Abdallah Basheir, Wonbong Jang, Oscar Key, and Waleed Dawood for their fruitful discussions and useful feedback.</p>
+       We thank Shalini Maiti, Abdallah Basheir, Wonbong Jang, Oscar Key, and Waleed Dawood for their fruitful discussions and useful feedback.
+       We also thank Third Dimension, the startup where the lead author works, for their continued support and encouragement.</p>
     <p>We referred to the project page of <a href="https://nerfies.github.io/">Nerfies</a> when creating this project page.</p>
   </div>
 </section>
