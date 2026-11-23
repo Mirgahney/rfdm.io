@@ -109,7 +109,7 @@
               <span class="link-block">
                 <a href="#qualitative-videos" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fab fa-youtube"></i></span>
-                  <span>Video (Coming Soon)</span>
+                  <span>Video</span>
                 </a>
               </span>
               <!-- Code -->
@@ -241,25 +241,13 @@
       </div>
     </div>
 
-    <!--
-      TODO: once video files are supplied, replace the placeholder block below with a
-      .video-gallery grid of <video> tags, e.g.:
-
-      <div class="video-gallery">
-        <div>
-          <video autoplay muted loop playsinline controls>
-            <source src="./static/videos/RDM/<name>.mp4" type="video/mp4">
-          </video>
-          <p class="video-caption">Caption describing the prompt / comparison.</p>
-        </div>
-        ... (repeat per clip)
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <video controls preload="metadata" playsinline style="width:100%; border-radius:8px; background:#111;">
+          <source src="./static/videos/RDM/RDM_supplementary_web.mp4" type="video/mp4">
+        </video>
+        <p class="video-caption">Supplementary video: qualitative comparisons of RDM against volume-diffusion and segment-based baselines.</p>
       </div>
-
-      Drop source files into ./static/videos/RDM/ (folder already created).
-    -->
-    <div class="gallery-placeholder">
-      <span class="icon"><i class="fas fa-video"></i></span>
-      Full video gallery coming soon &mdash; including dynamic-object interaction results.
     </div>
   </div>
 </section>
